@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "#about", label: "About" },
   { href: "/projects", label: "Projects" },
-  { href: "/skills", label: "Skills" },
+  { href: "#skills", label: "Skills" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -33,7 +33,7 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/home" className="text-xl font-bold">
+        <Link href="/" className="text-xl font-bold">
           Portfolio
         </Link>
 
