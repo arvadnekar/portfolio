@@ -50,7 +50,7 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
           >
             <Button asChild size="lg" className="rounded-full">
-              <Link href="#projects">
+              <Link href="projects">
                 View My Work
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
