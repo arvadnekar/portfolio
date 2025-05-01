@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Card, CardContent } from '../ui/card';
 import { Briefcase, GraduationCap, Heart } from 'lucide-react';
 import profilePic from './../../../public/profile1.jpeg'
-export function AboutSection() {
+export function About() {
   return (
     <section id="#about" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
@@ -53,11 +53,7 @@ export function AboutSection() {
               experiences
             </h3>
             <p className="text-muted-foreground mb-6">
-              I&apos;m a passionate developer with over 1 years of experience
-              building web applications. I specialize in JavaScript, React,
-              Node.js, and modern web technologies. My approach combines
-              technical expertise with an eye for design to create solutions
-              that are both functional and visually appealing.
+            Hi, I&apos;m Akanksha Vadnekar, a versatile Web Developer and Educator with over 7 years of combined professional experience across web development, CMS customization, teaching, and AI-integrated solutions. My expertise spans full-stack development, WordPress (custom themes & plugins), and privacy-focused AI tools. I bring a unique blend of frontend creativity and backend engineering to every project I work on.
             </p>
 
             <div className="grid gap-4">
@@ -69,8 +65,7 @@ export function AboutSection() {
                   <div>
                     <h4 className="font-medium">Experience</h4>
                     <p className="text-sm text-muted-foreground">
-                      5+ years of professional development experience working
-                      with startups and established companies.
+                    Over 7 years of combined professional experience.
                     </p>
                   </div>
                 </CardContent>
@@ -84,8 +79,7 @@ export function AboutSection() {
                   <div>
                     <h4 className="font-medium">Education</h4>
                     <p className="text-sm text-muted-foreground">
-                      Bachelor&apos;s degree in Computer Science from University
-                      of Technology.
+                    Master’s in Computer Engineering at Memorial University of Newfoundland, Canada.
                     </p>
                   </div>
                 </CardContent>
@@ -99,7 +93,7 @@ export function AboutSection() {
                   <div>
                     <h4 className="font-medium">Interests</h4>
                     <p className="text-sm text-muted-foreground">
-                      When I&apos;m not coding, I enjoy photography, hiking, and
+                      When I&apos;m not coding, I enjoy photography, painting,Traveling and
                       exploring new technologies.
                     </p>
                   </div>
