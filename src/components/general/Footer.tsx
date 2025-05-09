@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <span className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} John Doe. All rights reserved.
+            © {new Date().getFullYear()} Akanksha Ravisheth Vadnekar. All rights reserved.
           </span>
         </div>
         <div className="flex items-center gap-4">
