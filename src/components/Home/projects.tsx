@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import { motion } from 'framer-motion';
@@ -15,6 +14,7 @@ import Link from 'next/link';
 import { Badge } from '../ui/badge';
 import { projects } from '@/data/projects';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface ProjectsProps {
   featuredOnly?: boolean;
@@ -81,13 +81,13 @@ export function Projects({ featuredOnly = false }: ProjectsProps) {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="overflow-hidden h-full flex flex-col group">
-                <div className="relative h-48 overflow-hidden">
-                  {/* <Image
+                <div className="relative h-80 overflow-hidden">
+                  <Image
                     src={project.image}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  /> */}
+                  />
                 </div>
                 <CardContent className="p-6 flex-grow flex flex-col">
                   <h3 className="text-xl font-bold mb-2">{project.title}</h3>
