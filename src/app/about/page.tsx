@@ -1,8 +1,9 @@
-import { About } from "@/components/Home/about";
 
-export default function AboutPage(){
+import { TimelineDemo } from "@/components/Home/AboutSection";
+
+
+export default async function AboutSection(){
     return (
-        <About />
+        <TimelineDemo />
     )
-    
 }

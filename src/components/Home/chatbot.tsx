@@ -31,7 +31,7 @@ export default function ChatBot() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newMessages), // Send the correct message format
+      body: JSON.stringify({ messages: newMessages }), // Send the correct message format
     });
 
     const data = await response.json();

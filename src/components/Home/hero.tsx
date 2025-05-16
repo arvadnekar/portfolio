@@ -1,17 +1,29 @@
 'use client';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import {
+  ArrowRight,
+  Briefcase,
+  Github,
+  GraduationCap,
+  Heart,
+  Linkedin,
+  Mail,
+} from 'lucide-react';
 import { Button } from '../ui/button';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image'; // Make sure to import this
+import profilePic from '@/public/profile1.jpeg';
+import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
 
 export function HeroSection() {
   return (
     <section
-      id="#home"
-      className="min-h-sceen felx flex-col justify-center pt-16 pb-10"
+      id="home"
+      className="min-h-screen flex items-center justify-center pt-16 pb-10"
     >
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl max-auto text-center md:text-left">
+        {/* Left: Text content */}
+        <div className="text-center md:text-left flex-1">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -24,30 +36,85 @@ export function HeroSection() {
               </span>
             </h1>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-6">
-              Full Stack Developer & UI/UX Developer
+              Full Stack Developer with a passion for creating beautiful user
+              experiences
             </h2>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0">
-              I build exceptional digital experiences that are fast, accessible,
-              and visually appealing. Let&apos;s bring your ideas to life.
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
+              Hi, I&apos;m Akanksha Vadnekar, a versatile Web Developer and
+              Educator with over 7 years of combined professional experience
+              across web development, CMS customization, teaching, and
+              AI-integrated solutions. My expertise spans full-stack
+              development, WordPress (custom themes & plugins), and
+              privacy-focused AI tools. I bring a unique blend of frontend
+              creativity and backend engineering to every project I work on.
             </p>
           </motion.div>
+          <div>
+            <div className="flex flex-col gap-y-2">
+              <Card>
+                <CardHeader className="flex flex-row items-center gap-x-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Briefcase className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <CardTitle>Experience</CardTitle>
+                    <CardDescription>
+                      Over 7 years of combined professional experience.
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader className="flex flex-row items-center gap-x-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <GraduationCap className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <CardTitle>Education</CardTitle>
+                    <CardDescription>
+                      Master&apos;s in Computer Engineering at Memorial
+                      University of Newfoundland, Canada.
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+              </Card>
+
+              <Card>
+                <CardHeader className="flex flex-row items-center gap-x-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Heart className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <CardTitle>Interests</CardTitle>
+                    <CardDescription>
+                      When I&apos;m not coding, I enjoy photography,
+                      painting,Traveling and exploring new technologies.
+                    </CardDescription>
+                  </div>
+                </CardHeader>
+              </Card>
+            </div>
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-6"
           >
             <Button asChild size="lg" className="rounded-full">
               <Link href="projects">
@@ -64,6 +131,7 @@ export function HeroSection() {
               <Link href="#contact">Get In Touch</Link>
             </Button>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -113,6 +181,25 @@ export function HeroSection() {
             </Button>
           </motion.div>
         </div>
+      </div>
+      <div className="flex flex-row gap-x-4 w-full justify-center items-center">
+        {/* Image */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="grow w-full p-16"
+        >
+          <div className=" aspect-square relative rounded-full overflow-hidden">
+            <Image
+              src={profilePic}
+              alt="Profile"
+              fill
+              className="object-cover scale-150 rounded-full"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -7,7 +7,7 @@ import { Briefcase, GraduationCap, Heart } from 'lucide-react';
 import profilePic from './../../../public/profile1.jpeg'
 export function About() {
   return (
-    <section id="#about" className="py-20 bg-muted/30">
+    <section id="about" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,7 +31,7 @@ export function About() {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            <div className="aspect-square relative rounded-2xl overflow-hidden">
+            <div className="aspect-square relative rounded-xl overflow-hidden w-full">
               <Image
                 src={profilePic}
                 alt="Profile"
@@ -39,7 +39,7 @@ export function About() {
                 className="object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-2xl -z-10"></div>
+            <div className="absolute -bottom-6 right-48 w-32 h-32 bg-primary/10 rounded-2xl -z-10"></div>
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-2xl -z-10"></div>
           </motion.div>
           <motion.div

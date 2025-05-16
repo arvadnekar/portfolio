@@ -45,10 +45,6 @@ export default function Contact() {
           >
             <ContactInformation />
           </motion.div>
-
-          <motion.div>
-            <ChatBot />
-          </motion.div>
         </div>
       </div>
     </section>

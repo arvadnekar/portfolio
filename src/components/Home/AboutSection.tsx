@@ -7,14 +7,20 @@ export function TimelineDemo() {
   const data = [
     {
       title: '2023-2025',
+      institution: 'Memorial University Newfoundland',
+      location: `St. John's, Canada`,
+      grade: 3.27,
+      gradeScale: 4,
+      skills: ['Next.js', 'TypeScript', 'Tailwind CSS',  'ShadCN/UI'],
+
       content: (
         <div>
-          <p className="mb-8 text-xs font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
-            <strong>Master of Applied Science in Computer Engineering</strong>{' '}
+          <p className="mb-8 text-xl font-normal text-neutral-800 md:text-sm dark:text-neutral-200">
+            <strong className="text-3xl">Memorial University</strong>
             <br />
-            <strong>Memorial University of Newfoundland, Canada</strong>
+            <div className="text-xl">Master of Applied Science in Computer Engineering</div>
             <br />
-            <strong>GPA: 3.27</strong>
+            <strong className="text-xl">GPA: 3.27</strong>
             <br />
             Developed a <strong>personal portfolio</strong> using{' '}
             <strong>

@@ -1,7 +1,11 @@
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
-  const { messages } = await req.json(); // 👈 expect an object with messages
+  const body = await req.json(); // ✅ parse request body once
+  console.log('🔥 Full request body:', body);
+
+  const { messages } = body; // ✅ extract messages from body
+  console.log('✅ Extracted messages:', messages);
 
   // Ensure the messages field is an array
   if (!Array.isArray(messages)) {
@@ -28,6 +32,8 @@ export async function POST(req: Request) {
   });
 
   const data = await response.json();
+  console.log('🧠 OpenAI Response:', JSON.stringify(data, null, 2));
+
   const reply =
     data.choices?.[0]?.message?.content || "Sorry, I couldn't respond.";
 
