@@ -1,25 +1,16 @@
 'use client';
-import {
-  ArrowRight,
-  Briefcase,
-  Github,
-  GraduationCap,
-  Heart,
-  Linkedin,
-  Mail,
-} from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '../ui/button';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image'; // Make sure to import this
 import profilePic from '@/public/profile1.jpeg';
-import { Card, CardDescription, CardHeader, CardTitle } from '../ui/card';
 
 export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center pt-16 pb-10"
+      className="min-h-screen flex items-center justify-center"
     >
       <div className="container mx-auto px-4">
         {/* Left: Text content */}
@@ -54,15 +45,21 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
-              Hi, I&apos;m Akanksha Vadnekar, a versatile Web Developer and
-              Educator with over 7 years of combined professional experience
-              across web development, CMS customization, teaching, and
-              AI-integrated solutions. My expertise spans full-stack
-              development, WordPress (custom themes & plugins), and
-              privacy-focused AI tools. I bring a unique blend of frontend
-              creativity and backend engineering to every project I work on.
+              Hi, I&apos;m Akanksha Vadnekar — a passionate Web Developer and
+              Educator with over 7 years of diverse professional experience
+              spanning full-stack web development, CMS customization, teaching,
+              and AI-integrated solutions. I specialize in building dynamic
+              digital experiences using modern web technologies, custom
+              WordPress themes and plugins, and privacy-focused AI tools. With a
+              strong foundation in both frontend design and backend
+              architecture, I approach every project with a balance of
+              creativity and technical precision. I hold a Master’s degree in
+              Computer Engineering from Memorial University of Newfoundland,
+              Canada. Outside of work, I enjoy photography, painting, traveling,
+              and staying curious about emerging technologies.
             </p>
           </motion.div>
+          {/*
           <div>
             <div className="flex flex-col gap-y-2">
               <Card>
@@ -110,6 +107,7 @@ export function HeroSection() {
               </Card>
             </div>
           </div>
+          */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

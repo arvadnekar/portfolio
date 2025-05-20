@@ -12,6 +12,7 @@ export function TimelineDemo() {
       grade: 3.27,
       gradeScale: 4,
       skills: ['Next.js', 'TypeScript', 'Tailwind CSS',  'ShadCN/UI'],
+      
 
       content: (
         <div>
