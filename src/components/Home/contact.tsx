@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 import ContactInformation from '../general/ContactInformation';
 import ContactForm from '../forms/ContactForm';
-import ChatBot from './chatbot';
 
 export default function Contact() {
   return (
