@@ -2,7 +2,7 @@ import Contact from '@/components/Home/contact';
 import { HeroSection } from '@/components/Home/hero';
 
 import { Projects } from '@/components/Home/projects';
-import { SkillsSection } from '@/components/Home/skills';
+import { SkillsSection } from '@/components/Home/skillsSection';
 
 export default function Home() {
   return (

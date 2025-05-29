@@ -44,23 +44,23 @@ export function Projects({ featuredOnly = false }: ProjectsProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="mb-12"
         >
           <div>
-            <h2 className="text-3xl font-bold mb-2">My Projects</h2>
+            <h2 className="text-3xl text-center font-bold mb-2">My Projects</h2>
             <div className="w-20 h-1 bg-primary mx-auto mb-6 rounded-full"></div>
           </div>
           <Card>
-            <CardHeader className="flex flex-row justify-between">
-              <div className="flex flex-col items-start">
+            <CardHeader className="flex flex-row justify-between items-center">
+              <div className="flex flex-col items-start gap-y-2 max-w-md">
                 <CardTitle>Featured Projects</CardTitle>
-                <CardDescription>
+                <CardDescription className='text-start hidden md:block'>
                   Here are some of my recent projects. Each project reflects my
                   skills and passion for creating exceptional digital
                   experiences.
                 </CardDescription>
               </div>
-              <div>
+              <div className='flex flex-col items-center'>
                 <Button asChild size="lg" className="rounded-full">
                   <Link href="/projects">
                     View My Work

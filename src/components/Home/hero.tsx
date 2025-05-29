@@ -21,7 +21,7 @@ export function HeroSection() {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-              <span className="text-primary">Hello, I&apos;m</span>{' '}
+              <span className="text-foreground">Hello, I&apos;m</span>{' '}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-chart-1 to-chart-2">
                 Akanksha
               </span>
@@ -48,15 +48,7 @@ export function HeroSection() {
               Hi, I&apos;m Akanksha Vadnekar — a passionate Web Developer and
               Educator with over 7 years of diverse professional experience
               spanning full-stack web development, CMS customization, teaching,
-              and AI-integrated solutions. I specialize in building dynamic
-              digital experiences using modern web technologies, custom
-              WordPress themes and plugins, and privacy-focused AI tools. With a
-              strong foundation in both frontend design and backend
-              architecture, I approach every project with a balance of
-              creativity and technical precision. I hold a Master’s degree in
-              Computer Engineering from Memorial University of Newfoundland,
-              Canada. Outside of work, I enjoy photography, painting, traveling,
-              and staying curious about emerging technologies.
+              and AI-integrated solutions.
             </p>
           </motion.div>
           {/*

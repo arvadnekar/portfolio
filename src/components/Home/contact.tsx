@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 import ContactInformation from '../general/ContactInformation';
 import ContactForm from '../forms/ContactForm';
+import Cal from '../general/Cal';
 
 export default function Contact() {
   return (
@@ -24,7 +25,11 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="flex flex-row justify-evenly">
+        <div className='w-full mb-4 mx-auto flex items-center justify-center'>
+          <Cal className="mx-auto w-fit rounded-full border-primary text-lg md:mx-0 md:w-auto md:max-w-fit" />
+        </div>
+
+        <div className="flex flex-col md:flex-row  justify-evenly gap-10">
           <div className="grow max-w-lg">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -41,6 +46,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className='mt-4 md:mt-auto'
           >
             <ContactInformation />
           </motion.div>

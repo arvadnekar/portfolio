@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Card, CardContent } from '../ui/card';
 import { Briefcase, GraduationCap, Heart } from 'lucide-react';
 import profilePic from './../../../public/profile1.jpeg'
+
 export function About() {
   return (
     <section id="about" className="py-20 bg-muted/30">

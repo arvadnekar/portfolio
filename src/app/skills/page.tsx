@@ -1,9 +1,10 @@
-import { SkillsSection } from "@/components/Home/skills";
-
-
-
+import { Skills } from "@/components/Home/skills";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title:'Projects'
+};
 export default async function skills(){
     return (
-        <SkillsSection />
+        <Skills />
     )
 }

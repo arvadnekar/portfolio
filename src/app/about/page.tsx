@@ -1,9 +1,12 @@
+import About from "@/components/Home/AboutSection";
+import { Metadata } from "next";
 
-import { TimelineDemo } from "@/components/Home/AboutSection";
-
+export const metadata: Metadata = {
+  title:'About'
+};
 
 export default async function AboutSection(){
     return (
-        <TimelineDemo />
+        <About />
     )
 }
