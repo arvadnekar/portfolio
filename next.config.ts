@@ -12,7 +12,15 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'avatars.githubusercontent.com',
         
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.linkpreview.net', 
+      },
+      {
+        protocol: 'https',
+        hostname: 'api.microlink.io',
+      },
     ]
   }
 };

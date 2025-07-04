@@ -15,6 +15,7 @@ import { Badge } from '../ui/badge';
 import { projects } from '@/data/projects';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { LinkPreview } from '../ui/linkpreview';
 
 interface ProjectsProps {
   featuredOnly?: boolean;
@@ -54,13 +55,13 @@ export function Projects({ featuredOnly = false }: ProjectsProps) {
             <CardHeader className="flex flex-row justify-between items-center">
               <div className="flex flex-col items-start gap-y-2 max-w-md">
                 <CardTitle>Featured Projects</CardTitle>
-                <CardDescription className='text-start hidden md:block'>
+                <CardDescription className="text-start hidden md:block">
                   Here are some of my recent projects. Each project reflects my
                   skills and passion for creating exceptional digital
                   experiences.
                 </CardDescription>
               </div>
-              <div className='flex flex-col items-center'>
+              <div className="flex flex-col items-center">
                 <Button asChild size="lg" className="rounded-full">
                   <Link href="/projects">
                     View My Work
@@ -114,14 +115,16 @@ export function Projects({ featuredOnly = false }: ProjectsProps) {
                     </Button>
                     {project.liveUrl && (
                       <Button asChild size="sm">
-                        <Link
-                          href={project.liveUrl}
+                        <LinkPreview
+                          url={project.liveUrl}
+                          width={300}
+                          height={200}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           <ExternalLink className="h-4 w-4 mr-2" />
                           Live Demo
-                        </Link>
+                        </LinkPreview>
                       </Button>
                     )}
                   </div>

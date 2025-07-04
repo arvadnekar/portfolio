@@ -4,6 +4,17 @@ import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import Cal from '../general/Cal';
 import TableOfContents from './TabelofContent';
+import { experiences } from '@/data/work';
+
+// type WorkExperienceProps = {
+//   experience: {
+//     company: string;
+//     role: string;
+//     timeframe: string;
+//     achievements: string[];
+//     images: { src: string; alt: string; width: number; height: number }[];
+//   };
+// };
 
 export default function About() {
   const structure = [
@@ -85,110 +96,43 @@ export default function About() {
         <section id="Work Experience">
           <h2 className="text-3xl font-bold">Work Experience</h2>
           <div className="mt-2">
-            {/* Jeenweb Technologists */}
-            <CardTitle>
-              <h3 className="text-xl font-semibold">Jeenweb Technologists</h3>
-            </CardTitle>
-            <Card className="p-0 bg-transparent shadow-none border-none my-2">
-              <CardHeader className="flex flex-row justify-between p-0">
-                <div className="flex flex-col">
-                  <span className="text-lg italic text-primary">
-                    WordPress Developer
-                  </span>
-                </div>
-                <span className="text-lg italic">July 2022 – July 2023</span>
-              </CardHeader>
-            </Card>
-            <CardContent>
-              <ul className="list-disc list-inside text-lg">
-                <li>
-                  Developed and maintained 30+ responsive, web-based WordPress
-                  websites including projects for international clients.
-                </li>
-                <li>
-                  Built custom plugins/themes, enhancing functionality and user
-                  engagement.
-                </li>
-                <li>
-                  Collaborated with cross-functional teams to translate client
-                  requirements into scalable web solutions.
-                </li>
-                <li>
-                  Optimized site performance, achieving 90% uptime and improving
-                  load speed
-                </li>
-                <li>
-                  Integrated WooCommerce and APIs, expanding e-commerce
-                  capabilities.
-                </li>
+            {experiences.map(exp => (
+              <div key={exp.id}>
+                <CardTitle>
+                  <h3 className="text-xl font-semibold mt-2">{exp.company}</h3>
+                </CardTitle>
+                <Card className="p-0 bg-transparent shadow-none border-none my-2">
+                  <CardHeader className="flex flex-row justify-between p-0">
+                    <div className="flex flex-col">
+                      <span className="text-lg italic text-primary">
+                        {exp.role}
+                      </span>
+                    </div>
+                    <span className="text-lg italic">{exp.timeframe}</span>
+                  </CardHeader>
+                </Card>
+                <CardContent>
+                  <ul className="list-disc list-inside text-lg">
+                    {exp.achievements.map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+                <hr className="my-4 border-muted" />
+              </div>
+            ))}
+            {/* <CardContent>
+              <ul className="mt-3 space-y-2 text-foreground">
+                {exp.achievements.map((achievement, index) => (
+                  <li
+                    key={index}
+                    className="relative pl-6 text-base before:absolute before:left-0 before:text-primary before:content-['•']"
+                  >
+                    {achievement}
+                  </li>
+                ))}
               </ul>
-            </CardContent>
-
-            <hr className="my-4 border-muted" />
-
-            {/* RevoKarmaHub */}
-            <CardTitle>
-              <h3 className="text-xl font-semibold mt-2">
-                RevoKarmaHub Software And Services Pvt. Ltd.
-              </h3>
-            </CardTitle>
-            <Card className="p-0 bg-transparent shadow-none border-none my-2">
-              <CardHeader className="flex flex-row justify-between p-0">
-                <div className="flex flex-col">
-                  <span className="text-lg italic text-primary">
-                    Internet Analyst
-                  </span>
-                </div>
-                <span className="text-lg italic">April 2019 – Feb 2021</span>
-              </CardHeader>
-            </Card>
-            <CardContent>
-              <ul className="list-disc list-inside text-lg">
-                <li>
-                  Processed large datasets to support data-driven
-                  decision-making.
-                </li>
-                <li>
-                  Designed SQL/NoSQL databases to enhance data accessibility and
-                  system performance.
-                </li>
-                <li>
-                  Created dashboards and automated reports, reducing delivery
-                  time by 40%
-                </li>
-              </ul>
-            </CardContent>
-
-            <hr className="my-4 border-muted" />
-
-            {/* Engicomm Engineering */}
-            <CardTitle>
-              <h3 className="text-xl font-semibold mt-2">
-                Engicomm Engineering
-              </h3>
-            </CardTitle>
-            <Card className="p-0 bg-transparent shadow-none border-none my-2">
-              <CardHeader className="flex flex-row justify-between p-0">
-                <div className="flex flex-col">
-                  <span className="text-lg italic text-primary">
-                    Instructor - technology institute
-                  </span>
-                </div>
-                <span className="text-lg italic">June 2017 – June 2022</span>
-              </CardHeader>
-            </Card>
-            <CardContent>
-              <ul className="list-disc list-inside text-lg">
-                <li>
-                  Delivered training on core IT subjects, achieving 90% student
-                  satisfaction.
-                </li>
-                <li>
-                  Mentored students on software development projects, boosting
-                  completion rates.
-                </li>
-              </ul>
-            </CardContent>
+            </CardContent> */}
           </div>
         </section>
 
@@ -203,12 +147,16 @@ export default function About() {
             <Card className="p-0 bg-transparent shadow-none border-none my-2">
               <CardHeader className="flex flex-row justify-between p-0">
                 <div className="flex flex-col">
-                  <span className="text-lg italic">
+                  <span className="text-base font-semibold italic">
                     Master of Applied Science in Computer Engineering{' '}
                   </span>
-                  <span>Sep 2023 – May 2025</span>
+                  <span className="text-base font-semibold">
+                    Sep 2023 – May 2025
+                  </span>
                 </div>
-                <span className="text-lg italic">CPA: 3.27/4.00</span>
+                <span className="text-base font-semibold italic">
+                  CPA: 3.27/4.00
+                </span>
               </CardHeader>
             </Card>
           </div>
@@ -220,13 +168,17 @@ export default function About() {
             <Card className="p-0 bg-transparent shadow-none border-none my-2">
               <CardHeader className="flex flex-row justify-between p-0">
                 <div className="flex flex-col">
-                  <span className="text-xl italic">
+                  <span className="text-base font-semibold italic">
                     B.E in Computer Engineering{' '}
                   </span>
-                  <span className="text-xl italic">July 2014 – May 2017</span>
+                  <span className="text-base font-semibold italic">
+                    July 2014 – May 2017
+                  </span>
                 </div>
 
-                <span className="text-lg italic">CPA: 7.50/9.00</span>
+                <span className="text-base font-semibold italic">
+                  CPA: 7.50/9.00
+                </span>
               </CardHeader>
             </Card>
           </div>

@@ -4,6 +4,7 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { useState } from "react";
 import { toast } from "sonner";
+import { sendContact } from "@/app/action/sendContact";
 
 export default function ContactForm(){
     const [formData, setFormData] = useState({
@@ -21,25 +22,32 @@ export default function ContactForm(){
         setFormData((prev) => ({ ...prev, [name]: value }));
       };
     
-      const handleSubmit = (e: React.FormEvent) => {
+      const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
         
         // Simulate form submission
-        setTimeout(() => {
-          toast.success("Message sent!",{
-            description: "Thank you for your message. I'll get back to you soon.",
-    
-          });
-          setFormData({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-          });
-          setIsSubmitting(false);
-        }, 1500);
-      };
+        // Prepare FormData object for the server action
+    const form = new FormData();
+    form.append('name', formData.name);
+    form.append('email', formData.email);
+    form.append('subject', formData.subject);
+    form.append('message', formData.message);
+
+    const response = await sendContact(form);
+
+if (response.success) {
+      toast.success("Message sent!", {
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      toast.error("Failed to send message. Please fix errors and try again.");
+      console.error(response.errors);
+    }
+
+    setIsSubmitting(false);
+  };
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
               <div>

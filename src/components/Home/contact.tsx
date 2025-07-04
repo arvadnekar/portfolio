@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 
 import ContactInformation from '../general/ContactInformation';
 import ContactForm from '../forms/ContactForm';
-import Cal from '../general/Cal';
 
 export default function Contact() {
   return (
     <section id="contact" className="py-20">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,10 +23,6 @@ export default function Contact() {
             out to me.
           </p>
         </motion.div>
-
-        <div className='w-full mb-4 mx-auto flex items-center justify-center'>
-          <Cal className="mx-auto w-fit rounded-full border-primary text-lg md:mx-0 md:w-auto md:max-w-fit" />
-        </div>
 
         <div className="flex flex-col md:flex-row  justify-evenly gap-10">
           <div className="grow max-w-lg">

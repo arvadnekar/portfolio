@@ -10,27 +10,34 @@ import {
   SiFastapi, SiExpress, SiKubernetes, SiVercel,
   SiJenkins, SiTravisci, SiGithubactions, SiGooglecloud,
   SiTerraform, SiTensorflow, SiPytorch, SiNumpy, SiPandas,
-  SiMaterialdesign, SiApachekafka,
+  SiMaterialdesign, SiApachekafka, SiGit,
 } from 'react-icons/si';
 
 type IconTextProps = {
   icon: React.ElementType;
   text: string;
+  colorClass?: string;
 };
 
-const IconText = ({ icon: Icon, text }: IconTextProps) => (
-  <div className="flex items-center px-3 py-2 border rounded-md bg-muted hover:shadow-sm">
-    <Icon className="text-xl mr-2" />
+const IconText = ({ icon: Icon, text, colorClass = 'text-gray-800' }: IconTextProps) => (
+  <div className="flex items-center space-x-2 px-4 py-2 border rounded-full bg-white hover:shadow-sm transition">
+    <Icon className={`text-xl ${colorClass}`} />
     <span className="text-sm font-medium">{text}</span>
   </div>
 );
 
-const SkillGroup = ({ title, skills }: { title: string; skills: IconTextProps[] }) => (
+const SkillGroup = ({
+  title,
+  skills,
+}: {
+  title: string;
+  skills: IconTextProps[];
+}) => (
   <div className="mb-6">
-    <h3 className="text-lg font-semibold mb-2">{title}</h3>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+    <h3 className="text-base font-semibold text-gray-800 mb-3">{title}</h3>
+    <div className="flex flex-wrap gap-3">
       {skills.map((skill, index) => (
-        <IconText key={index} icon={skill.icon} text={skill.text} />
+        <IconText key={index} {...skill} />
       ))}
     </div>
   </div>
@@ -38,64 +45,67 @@ const SkillGroup = ({ title, skills }: { title: string; skills: IconTextProps[] 
 
 export function Skills() {
   return (
-    <section className="mt-10">
-      <h2 className="text-2xl font-bold mb-6">Technical Skills</h2>
+    <section className="mt-10 px-4 max-w-5xl mx-auto">
+      <h2 className="text-3xl font-bold mb-6 text-center text-gray-900">Technical Skills</h2>
+
       <SkillGroup
         title="Programming Languages"
         skills={[
-          { icon: SiJavascript, text: 'JavaScript' },
-          { icon: SiTypescript, text: 'TypeScript' },
-          { icon: SiPython, text: 'Python' },
-          { icon: FaJava, text: 'Java' },
+          { icon: SiJavascript, text: 'JavaScript', colorClass: 'text-yellow-400' },
+          { icon: SiTypescript, text: 'TypeScript', colorClass: 'text-blue-600' },
+          { icon: SiPython, text: 'Python', colorClass: 'text-blue-500' },
+          { icon: FaJava, text: 'Java', colorClass: 'text-red-600' },
         ]}
       />
       <SkillGroup
         title="Frontend"
         skills={[
-          { icon: FaReact, text: 'React' },
-          { icon: SiNextdotjs, text: 'Next.js' },
-          { icon: SiTailwindcss, text: 'Tailwind CSS' },
-          { icon: SiBootstrap, text: 'Bootstrap' },
-          { icon: SiMaterialdesign, text: 'Material UI' },
+          { icon: FaReact, text: 'React', colorClass: 'text-cyan-500' },
+          { icon: SiNextdotjs, text: 'Next.js', colorClass: 'text-black' },
+          { icon: SiTailwindcss, text: 'Tailwind CSS', colorClass: 'text-teal-400' },
+          { icon: SiBootstrap, text: 'Bootstrap', colorClass: 'text-purple-600' },
+          { icon: SiMaterialdesign, text: 'Material-UI', colorClass: 'text-blue-700' },
         ]}
       />
       <SkillGroup
         title="Backend"
         skills={[
-          { icon: FaNodeJs, text: 'Node.js' },
-          { icon: SiFastapi, text: 'FastAPI' },
-          { icon: SiExpress, text: 'Express' },
-          { icon: SiPostgresql, text: 'PostgreSQL' },
-          { icon: SiMongodb, text: 'MongoDB' },
-          { icon: SiApachekafka, text: 'Kafka' },
+          { icon: FaNodeJs, text: 'Node.js', colorClass: 'text-green-600' },
+          { icon: SiFastapi, text: 'FastAPI', colorClass: 'text-green-500' },
+          { icon: SiPostgresql, text: 'PostgreSQL', colorClass: 'text-blue-700' },
+          { icon: SiMongodb, text: 'MongoDB', colorClass: 'text-green-700' },
+          { icon: SiExpress, text: 'Express', colorClass: 'text-gray-600' },
+          { icon: SiApachekafka, text: 'Kafka', colorClass: 'text-orange-500' },
         ]}
       />
       <SkillGroup
         title="DevOps & Tools"
         skills={[
-          { icon: FaDocker, text: 'Docker' },
-          { icon: SiKubernetes, text: 'Kubernetes' },
-          { icon: SiVercel, text: 'Vercel' },
-          { icon: SiJenkins, text: 'Jenkins' },
-          { icon: SiTravisci, text: 'Travis CI' },
-          { icon: SiGithubactions, text: 'GitHub Actions' },
+          { icon: FaDocker, text: 'Docker', colorClass: 'text-blue-500' },
+          { icon: SiKubernetes, text: 'Kubernetes', colorClass: 'text-blue-600' },
+          { icon: SiGit, text: 'Git', colorClass: 'text-orange-600' },
+          { icon: SiVercel, text: 'Vercel', colorClass: 'text-black' },
+          { icon: SiJenkins, text: 'Jenkins', colorClass: 'text-red-500' },
+          { icon: SiTravisci, text: 'Travis CI', colorClass: 'text-red-600' },
+          { icon: SiGithubactions, text: 'GitHub Actions', colorClass: 'text-purple-600' },
         ]}
       />
       <SkillGroup
         title="Cloud & Infrastructure"
         skills={[
-          { icon: FaAws, text: 'AWS' },
-          { icon: SiGooglecloud, text: 'Google Cloud' },
-          { icon: SiTerraform, text: 'Terraform' },
+          { icon: FaAws, text: 'AWS', colorClass: 'text-orange-400' },
+          { icon: SiGooglecloud, text: 'Google Cloud', colorClass: 'text-blue-400' },
+          { icon: SiTerraform, text: 'Terraform', colorClass: 'text-indigo-600' },
         ]}
       />
       <SkillGroup
         title="Data Science & AI"
         skills={[
-          { icon: SiTensorflow, text: 'TensorFlow' },
-          { icon: SiPytorch, text: 'PyTorch' },
-          { icon: SiNumpy, text: 'NumPy' },
-          { icon: SiPandas, text: 'Pandas' },
+          { icon: SiPython, text: 'Python', colorClass: 'text-blue-500' },
+          { icon: SiTensorflow, text: 'TensorFlow', colorClass: 'text-orange-500' },
+          { icon: SiPytorch, text: 'PyTorch', colorClass: 'text-red-500' },
+          { icon: SiNumpy, text: 'NumPy', colorClass: 'text-blue-600' },
+          { icon: SiPandas, text: 'Pandas', colorClass: 'text-purple-500' },
         ]}
       />
     </section>
