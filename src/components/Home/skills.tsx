@@ -20,7 +20,7 @@ type IconTextProps = {
 };
 
 const IconText = ({ icon: Icon, text, colorClass = 'text-gray-800' }: IconTextProps) => (
-  <div className="flex items-center space-x-2 px-4 py-2 border rounded-full bg-white hover:shadow-sm transition">
+  <div className="flex items-center space-x-2 px-4 py-2 border rounded-full bg-card text-card-foreground hover:shadow-sm transition dark:hover:shadow-md">
     <Icon className={`text-xl ${colorClass}`} />
     <span className="text-sm font-medium">{text}</span>
   </div>
@@ -34,7 +34,7 @@ const SkillGroup = ({
   skills: IconTextProps[];
 }) => (
   <div className="mb-6">
-    <h3 className="text-base font-semibold text-gray-800 mb-3">{title}</h3>
+    <h3 className="text-base font-semibold text-foreground mb-3">{title}</h3>
     <div className="flex flex-wrap gap-3">
       {skills.map((skill, index) => (
         <IconText key={index} {...skill} />
@@ -46,7 +46,7 @@ const SkillGroup = ({
 export function Skills() {
   return (
     <section className="mt-10 px-4 max-w-5xl mx-auto">
-      <h2 className="text-3xl font-bold mb-6 text-center text-gray-900">Technical Skills</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center text-foreground">Technical Skills</h2>
 
       <SkillGroup
         title="Programming Languages"
