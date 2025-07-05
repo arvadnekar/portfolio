@@ -232,7 +232,7 @@ export function SkillsSection() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                     >
-                      <Card className="h-full hover:shadow-md transition-shadow bg-gradient-to-br from-white to-gray-50">
+                      <Card className="h-full hover:shadow-md transition-shadow bg-gradient-to-br">
                         <CardContent className="p-6">
                           <div className="flex flex-col h-full">
                             <div className="mb-4 text-primary">
@@ -270,7 +270,7 @@ export function SkillsSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    <Card className="h-full hover:shadow-md transition-shadow bg-gradient-to-br from-white to-gray-50">
+                    <Card className="h-full hover:shadow-md transition-shadow bg-gradient-to-br">
                       <CardContent className="p-6">
                         <div className="flex items-start gap-4">
                           <div className="text-primary shrink-0 mt-1">

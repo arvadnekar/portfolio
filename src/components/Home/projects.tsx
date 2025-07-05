@@ -16,12 +16,17 @@ import { projects } from '@/data/projects';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { LinkPreview } from '../ui/linkpreview';
+import { usePathname } from 'next/navigation';
+
 
 interface ProjectsProps {
   featuredOnly?: boolean;
 }
 
 export function Projects({ featuredOnly = false }: ProjectsProps) {
+
+  const pathname = usePathname();
+
   const [filteredProjects, setFilteredProjects] = useState(
     (featuredOnly
       ? projects.filter(project => project.featured)
@@ -30,6 +35,8 @@ export function Projects({ featuredOnly = false }: ProjectsProps) {
   );
 
   useEffect(() => {
+
+    
     if (featuredOnly) {
       setFilteredProjects(projects.filter(project => project.featured));
     }
@@ -51,7 +58,8 @@ export function Projects({ featuredOnly = false }: ProjectsProps) {
             <h2 className="text-3xl text-center font-bold mb-2">My Projects</h2>
             <div className="w-20 h-1 bg-primary mx-auto mb-6 rounded-full"></div>
           </div>
-          <Card>
+          {pathname !== '/projects' && (
+            <Card>
             <CardHeader className="flex flex-row justify-between items-center">
               <div className="flex flex-col items-start gap-y-2 max-w-md">
                 <CardTitle>Featured Projects</CardTitle>
@@ -71,6 +79,7 @@ export function Projects({ featuredOnly = false }: ProjectsProps) {
               </div>
             </CardHeader>
           </Card>
+          )}
         </motion.div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (

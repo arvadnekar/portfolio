@@ -1,3 +1,6 @@
+/* global.css */
+/* Author: Akanksha */
+
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
@@ -28,10 +31,10 @@
   --color-destructive: var(--destructive);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
+  --color-muted-foreground: var(--foreground);
+  --color-muted: var(--background);
+  --color-secondary-foreground: var(--foreground);
+  --color-secondary: var(--background);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary: var(--primary);
   --color-popover-foreground: var(--popover-foreground);
@@ -52,17 +55,10 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.15 0 0);
 
-  /* Gradient-inspired main colors */
-  --primary: oklch(0.72 0.25 30);              /* Burnt Orange */
+  --primary: oklch(0.646 0.222 41.116);              
   --primary-foreground: oklch(1 0 0);
 
-  --secondary: oklch(0.73 0.15 140);           /* Sage Green */
-  --secondary-foreground: oklch(0.15 0 0);
-
-  --muted: oklch(0.65 0.12 105);               /* Olive Bronze */
-  --muted-foreground: oklch(0.35 0 0);
-
-  --accent: oklch(0.68 0.19 70);               /* Amber Brown */
+  --accent: oklch(0.6 0.118 184.704);               
   --accent-foreground: oklch(0.98 0 0);
 
   --destructive: oklch(0.577 0.245 27.325);
@@ -84,7 +80,7 @@
   --sidebar-foreground: oklch(0.15 0 0);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.68 0.19 70);         /* Match main accent */
+  --sidebar-accent: var(--accent);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
@@ -98,16 +94,10 @@
   --popover: oklch(0.12 0 0);
   --popover-foreground: oklch(0.98 0 0);
 
-  --primary: oklch(0.68 0.22 30);               /* Burnt Orange darker */
+  --primary: oklch(0.646 0.222 41.116);               
   --primary-foreground: oklch(1 0 0);
 
-  --secondary: oklch(0.6 0.1 140);              /* Darker Sage */
-  --secondary-foreground: oklch(1 0 0);
-
-  --muted: oklch(0.5 0.08 105);                 /* Dim Olive */
-  --muted-foreground: oklch(0.8 0 0);
-
-  --accent: oklch(0.6 0.15 70);                 /* Darker Amber */
+  --accent: oklch(0.6 0.118 184.704);                 
   --accent-foreground: oklch(1 0 0);
 
   --destructive: oklch(0.396 0.141 25.723);
@@ -127,7 +117,7 @@
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.6 0.15 70);
+  --sidebar-accent: var(--accent);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
