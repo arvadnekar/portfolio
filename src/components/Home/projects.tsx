@@ -106,7 +106,7 @@ export function Projects({ featuredOnly = false }: ProjectsProps) {
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map(tag => (
-                      <Badge key={tag} variant="secondary">
+                      <Badge key={tag} variant="secondary" className="border border-[#c14f14] rounded-full px-3 py-1 text-sm text-gray-700 hover:bg-[#009fa7] hover:text-white dark:border-[#c14f14] dark:text-gray-300">
                         {tag}
                       </Badge>
                     ))}
