@@ -7,7 +7,7 @@ export const projects = [
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "ShadCN"],
         liveUrl: "https://portfolio-jade-five-70.vercel.app/",
         githubUrl: "https://github.com/arvadnekar/portfolio",
-        featured: true
+        featured: false
       },
     {
       id: 2,
@@ -36,6 +36,16 @@ export const projects = [
         tags: ["Three.js", "WebGL", "JavaScript", "Vite", "Postprocessing", "OrbitControls"],
         liveUrl: "https://web3d-solar.vercel.app/",
         githubUrl: "https://github.com/arvadnekar/web3d-solar",
+        featured: true
+      },
+      {
+        id: 5,
+        title: "Mini Cab Booking",
+        description: "A full-stack cab booking platform where users can register, book rides, track status, and manage bookings. Built with the MERN stack, it features authentication, driver dashboard, and a responsive UI.",
+        image: "/minicabbooking.png",
+        tags: ["React", "Next.js", "Node.js", "TypeScript", "Express", "MongoDB", "postgreSQL","Clerk", "TailwindCSS","ShadCN","Digital Ocean","Vercel","mapbox"],
+        liveUrl: "https://minicabbooking-front.vercel.app/",
+        githubUrl: "https://github.com/arvadnekar/minicabbooking",
         featured: true
       }
     ];
