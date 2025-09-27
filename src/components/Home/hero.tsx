@@ -1,16 +1,16 @@
 'use client';
-import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
-import { Button } from '../ui/button';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import Image from 'next/image'; // Make sure to import this
 import profilePic from '@/public/profile1.jpeg';
+import { motion } from 'framer-motion';
+import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
+import Image from 'next/image'; // Make sure to import this
+import Link from 'next/link';
+import { Button } from '../ui/button';
 
 export function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center"
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-8"
     >
       <div className="container mx-auto px-4">
         {/* Left: Text content */}
